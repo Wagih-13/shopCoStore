@@ -1,0 +1,106 @@
+// include the styles variables
+@use "../../sass/variabels" as *;
+// include the styles mixin
+@use "../../sass/mixin" as *;
+// include the styles placeholder
+@use "../../sass/pleacholder" as *;
+
+.pagination {
+  width: 100%;
+  margin-top: 20px;
+  padding: 20px 0px;
+  .container {
+    width: 100%;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border-top: none;
+    .paginationContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      .pageItem {
+        padding: 5px;
+        width: 30px;
+        height: 30px;
+        @include flexBox(center, center);
+        border: none;
+        background-color: $mainColor;
+        color: black;
+        cursor: pointer;
+        -o-border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        border-radius: 8px;
+        &.active {
+          background-color: $blackColor !important;
+          button {
+            color: $mainColor !important;
+          }
+        }
+        button {
+          background-color: transparent;
+          border: none;
+          outline: none;
+          color: black;
+          &:focus {
+            border: none;
+            outline: none;
+          }
+        }
+      }
+    }
+    .buttonNav {
+      padding: 5px 10px;
+      border: 1px solid $blackColor;
+      background-color: transparent;
+      color: black;
+      cursor: pointer;
+      -o-border-radius: 6px;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      -ms-border-radius: 6px;
+      border-radius: 6px;
+      button {
+        @include flexBox(center, center, 10px);
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: black;
+        &:focus {
+          border: none;
+          outline: none;
+        }
+      }
+    }
+  }
+}
+@media ($tabletScreen) {
+  .paginationContainer {
+    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
+    .pageItem {
+      width: 25px !important;
+      height: 25px !important;
+    }
+  }
+  .buttonNav {
+    padding: 3px !important;
+    button {
+      gap: 5px !important;
+      span {
+        font-size: 10px;
+        // display: none !important;
+      }
+      svg {
+        font-size: 12px;
+      }
+    }
+  }
+}

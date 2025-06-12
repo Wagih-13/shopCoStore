@@ -1,0 +1,156 @@
+@use "../../../../../sass/mixin" as *;
+@use "../../../../../sass/pleacholder" as *;
+@use "../../../../../sass/variabels" as *;
+
+.Infomations {
+  @include flexBox(flex-start, flex-start, 10px, column);
+  .headeTitle {
+    @extend %sectionTitle;
+  }
+  .rating {
+    @include flexBox(flex-start, center, 10px);
+    .persantage {
+      color: $blackColor;
+    }
+    svg {
+      font-size: $iconFont;
+      color: #ffc633;
+    }
+  }
+  .pricingDetails {
+    width: 100%;
+    @include flexBox(space-between, center, 10px);
+    .price {
+      @include flexBox(flex-start, center, 10px);
+      .newPrice {
+        font-size: $xlFont;
+        font-weight: bold;
+      }
+      .oldPrice {
+        font-size: $lFont;
+        color: $grayColor;
+        text-decoration: line-through;
+        font-size: $mFont;
+        font-weight: bold;
+      }
+      .sale {
+        @include borderBox(none, 20px);
+        background-color: #ff33334b;
+        padding-inline: 8px 12px;
+        color: #ff3333;
+        font-size: $sFont;
+      }
+    }
+    .availabilityText {
+      color: rgb(6, 139, 66);
+      font-size: $lFont;
+    }
+  }
+  .description {
+    color: rgb(87, 87, 87);
+  }
+  .selectColor {
+    width: 100%;
+    padding: 10px 0px 20px;
+    border-top: 1px solid $mainColor;
+    border-bottom: 1px solid $mainColor;
+    @include flexBox(center, flex-start, 10px, column);
+    .selectColorTitle {
+      margin: 0px;
+      font-size: $mFont;
+      color: $grayColor;
+    }
+    .colors {
+      @include flexBox(flex-start, center, 6px);
+      .color {
+        @include borderBox(none, 50%);
+        @include flexBox(center, center);
+        cursor: pointer;
+        &.active svg {
+          color: white;
+          font-size: $mFont;
+        }
+      }
+    }
+  }
+  .chooseSize {
+    width: 100%;
+    padding: 0px 0px 20px;
+    border-bottom: 1px solid $mainColor;
+    @include flexBox(center, flex-start, 10px, column);
+    .chooseSizeTitle {
+      margin: 0px;
+      font-size: $mFont;
+      color: $grayColor;
+    }
+    .sizes {
+      @include flexBox(flex-start, center, 10px);
+      .size {
+        background-color: $mainColor;
+        min-width: 50px;
+        text-align: center;
+        color: black;
+        padding-inline: 8px 12px;
+        cursor: pointer;
+        @include borderBox(none, 20px);
+        &.active {
+          color: white !important;
+          background-color: $blackColor !important;
+        }
+      }
+    }
+  }
+
+  .addToCart {
+    padding: 20px 0px;
+    width: 100%;
+    @include flexBox(flex-start, center, 10px, row);
+    .editQuantity {
+      width: 150px;
+      @include flexBox(space-evenly, center, 10px, row);
+      @include borderBox(none, 20px);
+      background-color: $mainColor;
+      color: white;
+      padding: 8px 12px;
+      height: 40px;
+      overflow: hidden;
+      input {
+        background-color: transparent;
+        outline: none;
+        color: black;
+        border: none;
+      }
+      button {
+        background-color: $mainColor;
+        color: black;
+        font-size: $iconFont;
+      }
+    }
+    .addToCartBtn {
+      height: 40px;
+      width: calc(100% - 150px - 10px);
+      padding: 8px 12px;
+      background-color: $blackColor;
+      color: white;
+      font-size: $lFont;
+      @include borderBox(none, 20px);
+      cursor: pointer;
+    }
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+@media (max-width: 768px) {
+  .addToCart {
+    .editQuantity {
+      width: 130px !important;
+    }
+  }
+}

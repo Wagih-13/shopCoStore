@@ -1,0 +1,53 @@
+// include the styles variables
+@use "../../../../sass/variabels" as *;
+// include the styles mixin
+@use "../../../../sass/mixin" as *;
+// include the styles placeholder
+@use "../../../../sass/pleacholder" as *;
+
+.brands {
+  width: 100%;
+  padding: 6px;
+  background-color: $secondaryColor;
+  position: relative;
+  z-index: 2;
+  .brandsContainer {
+    width: 90%;
+    margin: 0px auto;
+    @include flexBox(center, center, 30px);
+    overflow: hidden;
+    div {
+      width: 150px;
+      h2 {
+        width: 150px;
+        font-size: 38px;
+        color: white;
+        font-family: "Bodoni Moda", serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+      }
+    }
+  }
+}
+
+@media ($largeScreen) {
+  .brandsContainer {
+    width: 90% !important;
+  }
+}
+
+@media ($tabletScreen) {
+  .brands {
+    .brandsContainer {
+      div {
+        width: calc(100% / 3 - 30px) !important;
+        img {
+          width: 100%;
+          height: 20px !important;
+          object-fit: initial !important;
+        }
+      }
+    }
+  }
+}

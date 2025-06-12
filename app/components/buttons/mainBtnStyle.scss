@@ -1,0 +1,14 @@
+// include the styles variables
+@use "../../sass/variabels" as *;
+// include the styles mixin
+@use "../../sass/mixin" as *;
+// include the styles placeholder
+@use "../../sass/pleacholder" as *;
+
+.mainBtn {
+  padding: 10px 40px;
+  border: none;
+  @include borderBox(none, 40px);
+  @extend %transition;
+  cursor: pointer;
+}

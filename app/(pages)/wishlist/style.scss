@@ -1,0 +1,53 @@
+@use "../../sass/mixin" as *;
+@use "../../sass/pleacholder" as *;
+@use "../../sass/variabels" as *;
+
+.wishList {
+  .container {
+    header {
+      width: 100%;
+      @include flexBox(center, center);
+      margin-bottom: 30px;
+      h1 {
+        @extend %headeTitle;
+      }
+    }
+    .wishListContainer {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 20px;
+      .wishItem {
+        width: 100%;
+        @include flexBox(flex-start, flex-start, 10px);
+        padding: 5px;
+        color: black;
+        img {
+          width: 100px;
+          height: 100px;
+        }
+        .details {
+          margin: 0;
+          h4 {
+            line-height: 1rem;
+          }
+          .removeBtn {
+            border: none;
+            background-color: transparent;
+            color: $grayColor;
+            text-decoration: underline;
+            @extend %transition;
+            &:hover {
+              transform: scale(0.9);
+              -webkit-transform: scale(0.9);
+              -moz-transform: scale(0.9);
+              -ms-transform: scale(0.9);
+              -o-transform: scale(0.9);
+              color: $redColor;
+            }
+          }
+        }
+      }
+    }
+  }
+}

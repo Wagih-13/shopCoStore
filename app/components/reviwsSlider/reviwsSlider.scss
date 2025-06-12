@@ -1,0 +1,18 @@
+// include the styles variables
+@use "../../sass/variabels" as *;
+// include the styles mixin
+@use "../../sass/mixin" as *;
+// include the styles placeholder
+@use "../../sass/pleacholder" as *;
+
+.reviwsSlider {
+  width: 100%;
+  text-align: center;
+  padding: 0px 20px;
+  margin: 30px 0px;
+  .sliderTitle {
+    margin: 30px 0px;
+    font-size: $headFont;
+  }
+  
+}

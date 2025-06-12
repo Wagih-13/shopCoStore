@@ -1,0 +1,20 @@
+.videoContainer {
+  position: relative;
+ min-height: 80vh;
+}
+
+.videoContainer video {
+  object-fit: cover;
+  min-height: 80vh;
+  width: 100%;
+}
+
+.videoContainer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: calc(100% - 10px);
+  background-color: rgba(0, 0, 0, 0.568);
+  z-index: 2;
+}

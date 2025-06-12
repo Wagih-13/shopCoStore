@@ -1,0 +1,52 @@
+@use "../../../../../sass/variabels" as *;
+// include the styles mixin
+@use "../../../../../sass/mixin" as *;
+// include the styles placeholder
+@use "../../../../../sass/pleacholder" as *;
+
+.specificProductData {
+  .container {
+    .tabLinkContainer {
+      width: 100%;
+      @include flexBox(space-between, center, 0px, row);
+      border-bottom: 1px solid #ccc;
+      .tabLink {
+        width: calc(100% / 3);
+        text-align: center;
+        color: $grayColor;
+
+        padding: 10px;
+        cursor: pointer;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0px;
+          left: 50px;
+          right: 0px;
+          width: 0%;
+          height: 2px;
+          background-color: transparent;
+          @extend %transition;
+        }
+        &.active {
+          color: $blackColor;
+          &::after {
+            width: 100%;
+            left: 0px;
+            background-color: $blackColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media ($tabletScreen) {
+  .tabLinkContainer {
+    .tabLink {
+      white-space: nowrap;
+      font-size: 14px;
+    }
+  }
+}

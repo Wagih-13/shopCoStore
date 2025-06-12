@@ -1,0 +1,64 @@
+
+/* PriceRange.scss */
+.price-range-container {
+    width: 100%;
+    max-width: 400px;
+    font-family: Arial, sans-serif;
+  
+    .price-label {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  
+    .slider-wrapper {
+      position: relative;
+      height: 6px;
+      background: #ddd;
+      border-radius: 3px;
+    }
+  
+    .slider-track {
+      position: absolute;
+      height: 6px;
+      background: #ccc;
+      width: 100%;
+      border-radius: 3px;
+    }
+  
+    .slider-range {
+      position: absolute;
+      height: 6px;
+      background: black;
+      border-radius: 3px;
+    }
+  
+    .range-input {
+      position: absolute;
+      width: 100%;
+      appearance: none;
+      background: transparent;
+      pointer-events: none;
+  
+      &::-webkit-slider-thumb {
+        appearance: none;
+        width: 16px;
+        height: 16px;
+        position: relative;
+        background: black;
+        z-index: 2;
+        margin-top: -6px;
+        border-radius: 50%;
+        cursor: pointer;
+        pointer-events: all;
+      }
+    }
+  
+    .price-values {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+  }
+  

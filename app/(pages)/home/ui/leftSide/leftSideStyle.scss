@@ -1,0 +1,104 @@
+// include the styles variables
+@use "../../../../sass/variabels" as *;
+// include the styles mixin
+@use "../../../../sass/mixin" as *;
+// include the styles placeholder
+@use "../../../../sass/pleacholder" as *;
+
+.leftSideSec {
+  width: calc(100% - 600px - 40px);
+  .mainTitle {
+    width: 600px;
+    margin: 10px 0px;
+    color: $blackColor;
+    font-weight: bolder;
+    font-size: 70px;
+    line-height: 1;
+  }
+  & > p {
+    width: 540px;
+    color: #616060;
+    font-size: $mFont;
+    line-height: 1;
+  }
+  button {
+    margin: 20px 0px 0px;
+  }
+  .statistics {
+    margin: 30px 0px;
+    @include flexBox(flex-start, flex-start, 10px);
+    .item {
+      padding: 20px;
+      @include flexBox(center, center, initial, column);
+      .value {
+        color: $blackColor;
+        font-size: 40px;
+        font-weight: bolder;
+      }
+      .key {
+        color: #616060;
+        font-size: $sFont;
+      }
+    }
+    .item:nth-child(2) {
+      border-left: 1px solid #c0c0c0;
+      border-right: 1px solid #c0c0c0;
+    }
+  }
+  .mainBtn {
+    &:hover {
+      -o-transform: scale(1.02) translateY(-2px);
+      -webkit-transform: scale(1.02) translateY(-2px);
+      -moz-transform: scale(1.02) translateY(-2px);
+      -ms-transform: scale(1.02) translateY(-2px);
+      transform: scale(1.02) translateY(-2px);
+      box-shadow: 6px 6px 8px 1px rgb(199, 199, 199);
+    }
+  }
+}
+
+@media ($desktopScreen) {
+  .leftSideSec {
+    width: calc(100% - 500px) !important;
+    .mainTitle {
+      width: 100% !important;
+      font-size: 50px !important;
+    }
+    & > p {
+      width: auto !important;
+    }
+  }
+}
+@media ($laptopScreen) {
+  .leftSideSec {
+    width: 100% !important;
+    text-align: center;
+    .mainTitle {
+      margin-top: 30px !important;
+    }
+    .statistics {
+      justify-content: center !important;
+    }
+  }
+}
+@media ($tabletScreen) {
+  .leftSideSec {
+    text-align: center;
+    width: 100% !important;
+    .statistics {
+      justify-content: center !important;
+      flex-wrap: wrap !important;
+      .item:nth-child(2) {
+        border-right: none !important;
+      }
+      .item:nth-child(3) {
+        width: 100% !important;
+      }
+      .item {
+        .value {
+          font-size: 25px !important;
+        }
+      }
+    }
+  }
+}

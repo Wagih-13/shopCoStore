@@ -1,0 +1,135 @@
+@use "../../../../../sass/mixin" as *;
+@use "../../../../../sass/pleacholder" as *;
+@use "../../../../../sass/variabels" as *;
+
+.categoryPage {
+  .container {
+    .fillterSide {
+      padding: 20px;
+      width: 300px;
+      @include borderBox(1px solid $mainColor, 6px);
+      @include flexBox(flex-start, flex-start, 20px, column);
+      header {
+        width: 100%;
+        @include flexBox(space-between, center, 20px);
+        h2 {
+          font-size: $lFont;
+          font-weight: bold;
+          color: $blackColor;
+        }
+        svg {
+          font-weight: bolder;
+          font-size: $iconFont;
+        }
+      }
+      section {
+        width: 100%;
+        padding: 20px 0px;
+        border-top: 1px solid $mainColor;
+        .headOfSection {
+          @include flexBox(space-between, center, 20px);
+          margin: 0px 0px 20px;
+          h2 {
+            font-size: $lFont;
+            font-weight: bold;
+            color: $blackColor;
+          }
+          svg {
+            color: #000;
+            cursor: pointer;
+          }
+        }
+      }
+      .list {
+        ul {
+          width: 100%;
+          @include flexBox(flex-start, center, 5px, column);
+          li {
+            padding: 0px 3px;
+            @extend %transition;
+            width: 100%;
+            @include flexBox(space-between, center, 20px);
+            color: $grayColor;
+            cursor: pointer;
+            &:hover {
+              background-color: $mainColor;
+            }
+          }
+        }
+      }
+      .colors {
+        ul {
+          width: 100%;
+          @include flexBox(flex-start, center, 10px, row, wrap);
+          li {
+            span {
+              display: block;
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              background-color: #6b786b;
+              cursor: pointer;
+            }
+          }
+          li:nth-child(even) {
+            span {
+              background-color: black !important;
+            }
+          }
+        }
+      }
+      .sizes {
+        ul {
+          width: 100%;
+          @include flexBox(flex-start, center, 10px, row, wrap);
+          li {
+            span {
+              @include flexBox(center, center);
+              display: block;
+              padding: 0px 10px;
+              height: 30px;
+              -o-border-radius: 30px;
+              -webkit-border-radius: 30px;
+              -moz-border-radius: 30px;
+              -ms-border-radius: 30px;
+              border-radius: 30px;
+              background-color: $mainColor;
+              color: black;
+
+              cursor: pointer;
+              &.active {
+                background-color: black !important;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+      .applyBtn {
+        @include flexBox(center, center);
+      }
+    }
+  }
+}
+
+@media ($tabletScreen) {
+  .categoryPage {
+    .container {
+      .fillterSide {
+        border-top-left-radius: 20px !important;
+        border-top-right-radius: 20px !important;
+        border-bottom-left-radius: none !important;
+        border-bottom-right-radius: none !important;
+        background-color: white;
+        position: fixed !important;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        width: 100% !important;
+        z-index: 99999;
+        height: 80vh !important;
+        overflow-y: auto;
+      }
+    }
+  }
+}

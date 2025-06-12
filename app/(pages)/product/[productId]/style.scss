@@ -1,0 +1,59 @@
+@use "../../../sass/mixin" as *;
+@use "../../../sass/pleacholder" as *;
+@use "../../../sass/variabels" as *;
+
+.productDetails {
+  .container {
+    border-top: 1px solid $mainColor;
+    .productMainDetails {
+      @include flexBox(center, flex-start, 40px);
+      padding: 20px 0px;
+      .productImages {
+        width: 500px;
+        @include flexBox(center, center);
+      }
+      .productInfo {
+        width: calc(100% - 500px - 40px);
+      }
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .productMainDetails {
+    @include flexBox(center, flex-start, 40px, row, nowrap, !important);
+    .productImages {
+      width: 450px !important;
+    }
+    .productInfo {
+      width: calc(100% - 450px - 40px) !important;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .productMainDetails {
+    @include flexBox(center, flex-start, 20px, row, nowrap, !important);
+    .productImages {
+      width: 390px !important;
+    }
+    .productInfo {
+      width: calc(100% - 0px - 20px) !important;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .productDetails {
+    margin: 0px 0px 50px !important;
+    .productMainDetails {
+      flex-direction: column !important;
+      .productImages {
+        width: 100% !important;
+      }
+      .productInfo {
+        width: 100% !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,277 @@
+@use "../../../sass/mixin" as *;
+@use "../../../sass/pleacholder" as *;
+@use "../../../sass/variabels" as *;
+
+.cartPage {
+  width: 100%;
+  .container {
+    border-top: 1px solid $mainColor;
+    padding: 20px 0px;
+    & > h1 {
+      @extend %headeTitle;
+    }
+    .cartContainer {
+      width: 100%;
+      @include flexBox(space-between, flex-start, 20px);
+      .cartItems {
+        @include borderBox(1px solid $mainColor, 10px);
+        width: calc(100% - 20px - 500px);
+
+        padding: 20px;
+        .cartItem {
+          width: 100%;
+          padding-bottom: 15px;
+          padding-top: 15px;
+          &:first-child {
+            padding-top: 0px !important ;
+          }
+          &:not(:last-child) {
+            border-bottom: 1px solid $mainColor;
+          }
+          @include flexBox(space-between, flex-start, 10px);
+          .productDetialsSide {
+            @include flexBox(flex-start, flex-start, 10px);
+            .imageBox {
+              width: 150px;
+              height: 150px;
+              @include borderBox(none, 10px);
+              overflow: hidden;
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+            .detials {
+              @include flexBox(flex-start, flex-start, 0px, column);
+              li {
+                span {
+                  color: #555555;
+                }
+                &.price {
+                  font-size: $xxlFont;
+                  font-weight: bolder;
+                }
+              }
+            }
+          }
+          .productActionsSide {
+            @include flexBox(space-between, flex-end, 10px, column);
+            min-height: 150px;
+            .deleteButton {
+              color: $redColor;
+              width: 35px;
+              height: 35px;
+              background-color: rgba(235, 94, 94, 0.295);
+              @include borderBox(none, 50%);
+              @include flexBox(center, center);
+              font-size: $lFont;
+            }
+            .editQuantity {
+              width: 120px;
+              @include flexBox(space-evenly, center, 10px, row);
+              @include borderBox(none, 20px);
+              background-color: $mainColor;
+              color: white;
+              padding: 8px 12px;
+              height: 40px;
+              overflow: hidden;
+              input {
+                background-color: transparent;
+                outline: none;
+                color: black;
+                border: none;
+                width: 40px;
+              }
+              button {
+                background-color: $mainColor;
+                color: black;
+                font-size: $iconFont;
+                width: 40px;
+              }
+            }
+          }
+        }
+      }
+      .cartSummary {
+        width: 500px;
+        padding: 20px;
+        @include borderBox(1px solid $mainColor, 10px);
+        @include flexBox(flex-start, flex-start, 10px, column);
+        & > h2 {
+          font-size: $xlFont;
+          margin: 0;
+        }
+        ul {
+          width: 100%;
+          padding: 10px 0px;
+          border-bottom: 1px solid $mainColor;
+          @include flexBox(flex-start, flex-start, 10px, column);
+          li {
+            width: 100%;
+            @include flexBox(space-between, flex-start, 10px);
+            & > span {
+              font-size: $mFont;
+              color: #555555;
+            }
+
+            span.price {
+              font-size: $lFont;
+              font-weight: bold;
+              color: black;
+            }
+            span.price.offer {
+              color: $redColor;
+            }
+          }
+        }
+        .totalPrice {
+          width: 100%;
+          @include flexBox(space-between, flex-start, 10px);
+          & span.price {
+            font-size: $xxlFont;
+            font-weight: bolder;
+          }
+        }
+        .promocode {
+          width: 100%;
+          @include flexBox(flex-start, center, 10px);
+          .inputBox {
+            width: calc(100% - 10px - 120px);
+            height: 40px;
+            padding: 0px;
+            @include flexBox(flex-start, center, 5px);
+            background-color: $mainColor;
+            @include borderBox(none, 40px);
+            svg {
+              margin-left: 20px;
+              font-size: $iconFont;
+              color: black;
+            }
+            input {
+              width: 100%;
+              padding: 10px;
+              font-size: $mFont;
+              border: none;
+              outline: none;
+              background-color: transparent;
+            }
+          }
+
+          .applyButton {
+            width: 120px;
+            height: 40px;
+            @include flexBox(center, center);
+            font-size: $mFont;
+            padding: 10px 0px;
+            text-align: center;
+            @include borderBox(none, 40px);
+            background-color: $blackColor;
+            color: white;
+            @extend %transition;
+            &:hover {
+              transform: scale(1.02);
+              -webkit-transform: scale(1.02);
+              -moz-transform: scale(1.02);
+              -ms-transform: scale(1.02);
+              -o-transform: scale(1.02);
+            }
+          }
+        }
+        .checkoutButton {
+          width: 100%;
+          height: 50px;
+          @include flexBox(center, center, 10px);
+          font-size: $lFont;
+          text-align: center;
+          @include borderBox(none, 40px);
+          background-color: $blackColor;
+          color: white;
+          @extend %transition;
+          &:hover {
+            transform: scale(1.02);
+            -webkit-transform: scale(1.02);
+            -moz-transform: scale(1.02);
+            -ms-transform: scale(1.02);
+            -o-transform: scale(1.02);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media ($desktopScreen) {
+  .cartPage {
+    .container {
+      .cartContainer {
+        .cartItems {
+          width: calc(100% - 20px - 400px);
+        }
+        .cartSummary {
+          width: 400px;
+        }
+      }
+    }
+  }
+}
+
+@media ($laptopScreen) {
+  .cartPage {
+    .container {
+      .cartContainer {
+        @include flexBox(
+          flex-start,
+          flex-start,
+          20px,
+          column,
+          wrap,
+          !important
+        );
+        & > div {
+          width: 100% !important;
+        }
+        .cartItems {
+          padding: 10px !important;
+          .cartItem {
+            position: relative;
+            .imageBox {
+              width: 100px !important;
+              height: 100px !important;
+            }
+            .detials {
+              h2 {
+                font-size: 20px !important;
+              }
+              .price {
+                font-size: 20px !important;
+              }
+            }
+            .productActionsSide {
+              position: absolute;
+              right: 0px;
+              min-height: 130px !important;
+              .editQuantity {
+                width: 100px !important;
+                gap: 0px !important;
+                button {
+                  width: 30px !important;
+                }
+              }
+            }
+            &:first-child {
+              .productActionsSide {
+                top: 0px;
+              }
+            }
+            &:not(:first-child) {
+              .productActionsSide {
+                top: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+// include the styles variables
+@use "../../../../sass/variabels" as *;
+// include the styles mixin
+@use "../../../../sass/mixin" as *;
+// include the styles placeholder
+@use "../../../../sass/pleacholder" as *;
+
+.search {
+  .inputSearchContainer {
+    width: 100%;
+    position: relative;
+    padding: 0px 15px;
+    background-color: $mainColor;
+    @include flexBox(center, center, 10px);
+    @include borderBox(none, 40px);
+    .searchResults {
+      width: 100%;
+      max-height: 300px;
+      padding: 6px 0px 6px 6px;
+      position: absolute;
+      top: 120%;
+      left: 0px;
+      background-color: $whiteColor;
+      z-index: 3;
+      overflow-y: auto;
+      overflow-x: hidden;
+      display: none;
+      @include borderBox(1px solid $mainColor, 3px);
+      &.active {
+        @include flexBox(flex-start, flex-start, 0px, column, !important);
+      }
+      .item {
+        width: 100%;
+        display: block;
+        padding: 6px 8px;
+        text-align: left;
+        font-size: $sFont;
+        color: $blackColor;
+        cursor: pointer;
+        @extend %transition;
+        @include borderBox(initial, 3px);
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        &:hover {
+          background-color: $mainColor;
+        }
+      }
+    }
+    svg {
+      color: #909090;
+      font-size: 20px;
+      cursor: pointer;
+      &.closeSearch {
+        font-size: 25px;
+        display: none;
+      }
+    }
+    input {
+      width: 100%;
+      height: 100%;
+      border: none;
+      padding: 15px 0px;
+      background-color: transparent;
+      font-size: 18px;
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  .search {
+    display: inline-block !important;
+  }
+}
+
+@media ($laptopScreen) {
+  .search {
+    display: none;
+    grid-area: 1 /1 /2/5;
+    gap: 0px !important;
+    background-color: white;
+    z-index: 4;
+    .inputSearchContainer {
+      .searchIcon {
+        display: none;
+      }
+      .closeSearch {
+        display: inline-block !important;
+      }
+    }
+  }
+}

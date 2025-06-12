@@ -1,0 +1,73 @@
+// include the styles variables
+@use "../../../../sass/variabels" as *;
+// include the styles mixin
+@use "../../../../sass/mixin" as *;
+// include the styles placeholder
+@use "../../../../sass/pleacholder" as *;
+
+.browseByCategory {
+  width: 100%;
+  padding: 30px;
+  background-color: $mainColor;
+  margin: 50px 0px;
+  .mainTitel {
+    text-align: center;
+    color: $blackColor;
+    @extend %headeTitle;
+    margin-bottom: 40px;
+  }
+  .categories {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    gap: 20px;
+    div:nth-child(1) {
+      grid-area: 1/2/2/4;
+    }
+
+    div:nth-child(4) {
+      grid-area: 2/1/3/3;
+    }
+    & > div {
+      img {
+        width: 100%;
+        object-fit: cover;
+        @include borderBox(none, 20px);
+        cursor: pointer;
+      }
+      position: relative;
+      h3 {
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        color: $blackColor;
+        font-size: $headFont;
+        font-weight: bolder;
+      }
+    }
+  }
+}
+
+@media #{$laptopScreen} {
+  .browseByCategory {
+    padding: 20px !important;
+    .categories {
+      grid-template-columns: repeat(auto-fill, minmax(285px, 1fr)) !important;
+      div:nth-child(1) {
+        grid-area: initial !important;
+      }
+      div:nth-child(4) {
+        grid-area: initial !important;
+      }
+      & > div {
+        img {
+          width: 100% !important;
+          height: 200px !important;
+          aspect-ratio: 407/289 !important;
+          object-fit: cover;
+          @include borderBox(none, 20px);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

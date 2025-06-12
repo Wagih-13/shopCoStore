@@ -1,0 +1,54 @@
+@use "../../../../../sass/mixin" as *;
+@use "../../../../../sass/pleacholder" as *;
+@use "../../../../../sass/variabels" as *;
+
+.imageSlider {
+  display: block;
+  width: 100%;
+  @include flexBox(flex-start, center, 10px);
+
+  .displayedImage {
+    width: 80%;
+    height: auto;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      aspect-ratio: 1 / 1.1;
+      @include borderBox(none, 10px);
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  .remainingImages {
+    overflow: hidden;
+
+    .swiper-slide-thumb-active {
+      @include borderBox(none, 10px);
+      border: 1px solid black;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      @include borderBox(none, 10px);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .imageSlider {
+    flex-direction: column-reverse !important;
+
+    .swiper {
+      width: 100%;
+
+      .swiper-slide {
+        height: auto;
+      }
+    }
+  }
+}

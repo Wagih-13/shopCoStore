@@ -1,0 +1,42 @@
+@use "./variabels.scss" as *;
+
+%transition {
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  transition: 0.5s;
+}
+%slowTransition {
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  transition: 0.5s;
+}
+
+%headeTitle {
+  font-size: 48px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+%sectionTitle {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+@media #{$tabletScreen} {
+  %headeTitle {
+    font-size: 42px !important;
+  }
+  %sectionTitle {
+    font-size: 26px;
+  }
+}
+
+@media #{$mobileScreen} {
+  %headeTitle {
+    font-size: 30px !important;
+  }
+}

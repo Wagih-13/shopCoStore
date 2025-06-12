@@ -1,0 +1,113 @@
+// include the styles variables
+@use "../../sass/variabels" as *;
+// include the styles mixin
+@use "../../sass/mixin" as *;
+// include the styles placeholder
+@use "../../sass/pleacholder" as *;
+
+.productCard {
+  min-height: 360px;
+  @include flexBox(flex-start, flex-start, 10px, column);
+  position: relative;
+  color: black;
+  .actionsBar {
+    padding: 8px;
+    position: absolute;
+    top: 0px;
+    right: -110%;
+    @extend %slowTransition;
+    z-index: 2;
+    .favoritIcon {
+      width: 35px;
+      height: 35px;
+      background-color: $whiteColor;
+      cursor: pointer;
+      @include flexBox(center, center);
+      @include borderBox(none, 50%);
+      svg {
+        font-size: $iconFont;
+        color: $blackColor;
+      }
+    }
+  }
+  .addToCartButton {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: -110%;
+    padding: 0px 10px;
+    z-index: 2;
+    @extend %slowTransition;
+    button {
+      width: 100%;
+      padding: 12px;
+      text-align: center;
+      color: $whiteColor;
+      background-color: $blackColor;
+      @extend %transition;
+      &:hover {
+        -o-transform: scale(0.95);
+        -webkit-transform: scale(0.95);
+        -moz-transform: scale(0.95);
+        -ms-transform: scale(0.95);
+        transform: scale(0.95);
+      }
+    }
+  }
+
+  .image {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    img {
+      @include borderBox(none, 2px);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 295 / 300;
+      &.secondPhoto {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        opacity: 0;
+      }
+    }
+  }
+  .content {
+    width: 100%;
+    text-align: start;
+    @include flexBox(flex-start, flex-start, 1px, column);
+    white-space: wrap;
+    line-height: 1.3;
+    .price {
+      @include flexBox(flex-start, center, 10px, row, wrap);
+      row-gap: 5px !important;
+      column-gap: 10px;
+      .beforSale {
+        color: $grayColor;
+        text-decoration: line-through;
+        font-size: $mFont;
+      }
+      .afterSale {
+        color: $blackColor;
+        font-size: $lFont;
+        font-weight: bolder;
+      }
+      .salePecanteage {
+        @include borderBox(none, 20px);
+        background-color: #ff33334b;
+        padding-inline: 8px 12px;
+        color: #ff3333;
+      }
+    }
+  }
+  &:hover {
+    .actionsBar {
+      right: 0px !important;
+    }
+    .addToCartButton {
+      bottom: 10px !important;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+@use "../../../../../../sass/variabels" as *;
+// include the styles mixin
+@use "../../../../../../sass/mixin" as *;
+// include the styles placeholder
+@use "../../../../../../sass/pleacholder" as *;
+
+.reviewsSpecificProduct {
+  .headerBox {
+    @include flexBox(space-between, center, 20px, row, wrap);
+    padding: 20px 0px;
+    .leftSide {
+      h2 {
+        font-size: $xxlFont;
+        font-weight: bold;
+      }
+      .reviewNumber {
+        color: $grayColor;
+        font-size: $mFont;
+        font-weight: normal;
+      }
+    }
+    .rightSide {
+      @include flexBox(center, center, 10px, row, nowrap);
+      .filter {
+        @include flexBox(center, center);
+        background-color: $mainColor;
+        width: 40px;
+        height: 40px;
+        @include borderBox(none, 50%);
+      }
+      .latest {
+        padding: 8px 16px;
+        background-color: $mainColor;
+        @include borderBox(none, 24px);
+        @include flexBox(center, center, 10px, row, nowrap);
+
+        font-size: $sFont;
+      }
+      .writeReview {
+        padding: 8px 16px;
+        @include borderBox(none, 24px);
+        background-color: $blackColor;
+        color: $whiteColor;
+        cursor: pointer;
+        font-size: $sFont;
+      }
+    }
+  }
+  .contentBox {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media ($tabletScreen) {
+  .reviewsSpecificProduct {
+    .headerBox {
+      justify-content: center;
+    }
+    .contentBox {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+    }
+    .latest {
+      display: none !important;
+    }
+    .leftSide {
+      h2 {
+        font-size: $xlFont !important;
+      }
+    }
+  }
+}

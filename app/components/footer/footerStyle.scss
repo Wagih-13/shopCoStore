@@ -1,0 +1,168 @@
+@use "../../sass/variabels" as *;
+// Include the styles mixin
+@use "../../sass/mixin" as *;
+// Include the styles placeholder
+@use "../../sass/pleacholder" as *;
+
+.footer {
+  background-color: $mainColor;
+  padding: 20px 0;
+  margin-top: 250px;
+  .container {
+    @include flexBox(center, center, 30px, column);
+    .subscribeBox {
+      width: 90%;
+      margin: 0 auto;
+      padding: 30px;
+      transform: translateY(-60%);
+      @include borderBox(none, 20px);
+      background-color: $secondaryColor;
+      @include flexBox(space-between, center, 20px);
+      .subscribeBoxText {
+        color: $whiteColor;
+        font-size: 48px;
+        font-weight: 800;
+        margin-bottom: 10px;
+        width: 50%;
+        white-space: normal; // Replace text-wrap with white-space: normal
+        line-height: 1.5; // Adjust line-height as needed
+      }
+      form {
+        width: 350px;
+        @include flexBox(center, center, 20px, column);
+        .inputBox {
+          width: 100%;
+          background-color: $whiteColor;
+          overflow: hidden;
+          @include borderBox(none, 20px);
+          @include flexBox(flex-start, center, 0);
+          svg {
+            font-size: $iconFont;
+            margin: 0 10px;
+            color: #919191;
+          }
+          input {
+            flex: 1;
+            padding: 15px 5px;
+            font-size: $mFont;
+            border: none;
+          }
+        }
+        button {
+          padding: 15px 20px;
+          border: none;
+          background-color: $whiteColor;
+          color: $blackColor;
+          font-size: $mFont;
+          width: 100%;
+          cursor: pointer;
+          @include borderBox(none, 20px);
+        }
+      }
+    }
+    .footerLinks {
+      margin-top: -100px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 60px;
+      .logoSide {
+        p {
+          margin-top: 10px;
+          font-size: $mFont;
+          color: $grayColor;
+          line-height: 1.3;
+        }
+        .socialLinks {
+          margin-top: 20px;
+          @include flexBox(flex-start, center, 15px);
+          a {
+            @extend %transition;
+            &:hover {
+              transform: scale(1.2);
+            }
+            svg {
+              color: black;
+              font-size: $iconFont;
+            }
+          }
+        }
+      }
+      ul {
+        .titleHead {
+          font-size: $lFont;
+          color: black;
+          font-weight: bold;
+        }
+        li:not(:first-child) {
+          cursor: pointer;
+          @extend %transition;
+          &:hover {
+            transform: translateY(-3px);
+          }
+        }
+      }
+    }
+    .copyRights {
+      width: 100%;
+      border-top: 1px solid $grayColor;
+      padding: 10px 0;
+      @include flexBox(space-between, flex-start, 20px);
+      & > div {
+        margin: 0;
+        padding: 0;
+        height: min-content;
+      }
+      .paymentsMethods {
+        @include flexBox(flex-end, center, 10px);
+      }
+    }
+  }
+}
+
+// Media queries
+@media ($laptopScreen) {
+  .subscribeBox {
+    @include flexBox(center, center, 20px, column, !important);
+    form {
+      width: 100% !important;
+    }
+    .subscribeBoxText {
+      width: 100% !important;
+      text-align: center;
+    }
+  }
+}
+
+@media ($tabletScreen) {
+  .subscribeBox {
+    .subscribeBoxText {
+      width: 100% !important;
+      text-align: center;
+      font-size: 42px !important;
+    }
+  }
+  .footerLinks {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
+
+    column-gap: 10px !important;
+    row-gap: 20px !important;
+    .logoSide {
+      grid-column: 1/-1;
+      p {
+        width: 70% !important;
+      }
+    }
+  }
+  .copyRights {
+    @include flexBox(center, center, 10px, column, initial, !important);
+  }
+}
+
+@media ($mobileScreen) {
+  .subscribeBox {
+    .subscribeBoxText {
+      font-size: 30px !important;
+    }
+  }
+}

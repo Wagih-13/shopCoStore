@@ -1,0 +1,57 @@
+// include the styles variables
+@use "./sass/variabels" as *;
+
+@media #{$mobileScreenSpecified} {
+  .container {
+    max-width: 94% !important;
+  }
+}
+
+@media #{$tabletScreenSpecified} {
+  .container {
+    max-width: 92% !important;
+  }
+}
+
+@media #{$laptopScreenSpecified} {
+  .container {
+    max-width: 90% !important;
+  }
+}
+@media #{$desktopScreenSpecified} {
+  .container {
+    max-width: 88% !important;
+  }
+}
+@media #{$tvScreenSpecified} {
+  .container {
+    max-width: 88% !important;
+  
+  }
+}
+@media #{$largeScreenSpecified} {
+  .container {
+    max-width: 1350px !important;
+  }
+}
+
+@media #{$mobileScreen} {
+  $xsFont: 10px !global;
+  $sFont: 12px !global;
+  $mFont: 14px !global;
+  $lFont: 16px !global;
+  $xlFont: 18px !global;
+  $xxlFont: 20px !global;
+  $headFont: 22px !global;
+  $iconFont: 21px !global;
+}
+
+@media #{$tabletScreen} {
+  $xsFont: 11px !global;
+  $sFont: 13px !global;
+  $mFont: 15px !global;
+  $lFont: 17px !global;
+  $xlFont: 19px !global;
+  $headFont: 24px !global;
+  $iconFont: 23px !global;
+}

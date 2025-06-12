@@ -1,0 +1,35 @@
+// include the styles variables
+@use "../../sass/variabels" as *;
+// include the styles mixin
+@use "../../sass/mixin" as *;
+// include the styles placeholder
+@use "../../sass/pleacholder" as *;
+
+.reviewCard {
+  .reviw {
+    padding: 20px;
+    @include flexBox(center, flex-start, 10px, column);
+    @include borderBox(1px solid $mainColor, 20px);
+    text-align: start;
+    .rating {
+      svg {
+        font-size: $iconFont;
+        color: #ffc633;
+        margin: 0px 2px;
+      }
+    }
+    .reviwer {
+      @include flexBox(flex-start, flex-start, 0px, column);
+      h3 {
+        font-size: $lFont;
+        margin: 0px;
+        white-space: nowrap;
+      }
+      span {
+        margin: 0px;
+        font-size: $sFont;
+        color: $grayColor;
+      }
+    }
+  }
+}

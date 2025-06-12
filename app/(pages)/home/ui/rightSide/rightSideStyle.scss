@@ -1,0 +1,73 @@
+// include the styles variables
+@use "../../../../sass/variabels" as *;
+// include the styles mixin
+@use "../../../../sass/mixin" as *;
+// include the styles placeholder
+@use "../../../../sass/pleacholder" as *;
+
+.rightSideSec {
+  width: 600px;
+  position: relative;
+  & > img {
+    width: 600px;
+    height: 100%;
+    position: relative;
+    bottom: 0px;
+    object-fit: contain;
+    transform: translateY(20px);
+    -webkit-transform: translateY(20px);
+    -moz-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    -o-transform: translateY(20px);
+  }
+  .vectors {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    .one {
+      position: absolute;
+      top: 10%;
+      right: 15%;
+    }
+    .two {
+      position: absolute;
+      top: 40%;
+      left: 10%;
+    }
+  }
+}
+
+@media ($desktopScreen) {
+  .rightSideSec {
+    width: 500px !important;
+    .vectors {
+      .one {
+        right: 2% !important;
+      }
+    }
+  }
+}
+@media ($laptopScreen) {
+  .rightSideSec {
+    width: 100% !important;
+    text-align: center;
+    .vectors {
+      .one {
+        right: 5% !important;
+      }
+    }
+  }
+}
+@media ($tabletScreen) {
+  .rightSideSec {
+    width: 100% !important;
+    & > img {
+      width: 100% !important;
+    }
+    .vectors {
+      .one {
+        right: 5% !important;
+      }
+    }
+  }
+}

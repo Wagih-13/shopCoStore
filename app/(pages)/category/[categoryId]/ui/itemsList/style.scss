@@ -1,0 +1,35 @@
+@use "../../../../../sass/mixin" as *;
+@use "../../../../../sass/pleacholder" as *;
+@use "../../../../../sass/variabels" as *;
+
+.categoryPage {
+  .container {
+    .itemsSide {
+      width: calc(100% - 300px - 20px);
+      @include flexBox(flex-start, flex-start, 20px, column);
+
+      .sortByList {
+        width: 100%;
+        @include flexBox(space-between, center, 20px);
+      }
+      .itemsContainer {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid $mainColor;
+      }
+    }
+  }
+}
+
+@media ($tabletScreen) {
+  .categoryPage {
+    .container {
+      .itemsSide {
+        width: 100% !important;
+      }
+    }
+  }
+}

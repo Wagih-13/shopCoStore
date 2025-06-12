@@ -1,0 +1,27 @@
+// include the styles variables
+@use "../../sass/variabels" as *;
+// include the styles mixin
+@use "../../sass/mixin" as *;
+// include the styles placeholder
+@use "../../sass/pleacholder" as *;
+
+.landingSection {
+  padding: 20px 0px 0px;
+  background-color: $mainColor;
+  overflow-x: hidden;
+  .container {
+    @include flexBox(space-between, center, 40px);
+  }
+}
+
+.productDisplaySection {
+  background-color: $whiteColor;
+}
+
+@media ($laptopScreen) {
+  .landingSection {
+    .container {
+      @include flexBox(center, center, 0px, column, initial, !important);
+    }
+  }
+}

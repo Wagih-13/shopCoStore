@@ -1,0 +1,23 @@
+// include the styles variables
+@use "../../sass/variabels" as *;
+// include the styles mixin
+@use "../../sass/mixin" as *;
+// include the styles placeholder
+@use "../../sass/pleacholder" as *;
+
+.cardsSlider {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 50px 0px;
+  .sliderTitle {
+    @extend %headeTitle;
+    color: $blackColor;
+  }
+  .sliderContainer {
+    width: 100%;
+  }
+}

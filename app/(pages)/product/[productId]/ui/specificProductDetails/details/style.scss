@@ -1,0 +1,55 @@
+@use "../../../../../../sass/variabels" as *;
+// include the styles mixin
+@use "../../../../../../sass/mixin" as *;
+// include the styles placeholder
+@use "../../../../../../sass/pleacholder" as *;
+
+.productDetailsSec {
+  width: 100%;
+  padding: 20px 0px;
+  overflow-x: auto;
+  .productDetailsTable {
+    width: 100%;
+    @include borderBox(none, 6px);
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-collapse: collapse;
+    thead {
+      background-color: $blackColor;
+      color: white;
+      th {
+        padding: 10px;
+        text-align: left;
+        &:nth-child(2) {
+          border-left: 1px solid $mainColor;
+        }
+      }
+    }
+    tbody {
+      background-color: $mainColor;
+      color: $blackColor;
+      tr {
+        @extend %transition;
+        cursor: pointer;
+        &:hover {
+          td {
+            &:nth-child(2) {
+              background-color: rgba(228, 227, 227, 0.699);
+            }
+          }
+        }
+        td {
+          padding: 10px;
+          text-align: left;
+          border-top: 1px solid white;
+          @extend %transition;
+          &:nth-child(2) {
+            background-color: white;
+            border-left: 1px solid white;
+            border-top: 1px solid $mainColor;
+          }
+        }
+      }
+    }
+  }
+}

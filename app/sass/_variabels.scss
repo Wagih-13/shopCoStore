@@ -1,0 +1,33 @@
+// colors
+$mainColor: #f0f0f0;
+$secondaryColor: black;
+$grayColor: rgb(143, 143, 143);
+$whiteColor: white;
+$blackColor: black;
+$redColor: rgb(228, 39, 39);
+
+// fonts sizes
+$xsFont: 12px;
+$sFont: 14px;
+$mFont: 16px;
+$lFont: 20px;
+$xlFont: 22px;
+$xxlFont: 24px;
+$headFont: 30px;
+$iconFont: 23px;
+
+// media queries
+$mobileScreen: "(max-width: 480px)";
+$tabletScreen: " (max-width: 768px)";
+$laptopScreen: "(max-width: 1024px)";
+$desktopScreen: "(max-width: 1200px)";
+$tvScreen: "(max-width: 1400px)";
+$largeScreen: "(min-width: 1401px) ";
+
+// media queries specified
+$mobileScreenSpecified: "(max-width: 480px)";
+$tabletScreenSpecified: "(min-width: 481px) and (max-width: 768px)";
+$laptopScreenSpecified: "(min-width: 769px) and (max-width: 1024px)";
+$desktopScreenSpecified: "(min-width: 1025px) and (max-width: 1200px)";
+$tvScreenSpecified: "(min-width: 1201px)  and (max-width: 1400px)";
+$largeScreenSpecified: "(min-width: 1401px) ";

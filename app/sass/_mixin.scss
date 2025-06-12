@@ -1,0 +1,26 @@
+// flex box control
+@mixin flexBox(
+  $justify,
+  $align,
+  $gap: null,
+  $direction: null,
+  $wrab: null,
+  $peruorty: null
+) {
+  display: flex;
+  justify-content: $justify $peruorty;
+  align-items: $align $peruorty;
+  flex-direction: $direction $peruorty;
+  flex-wrap: $wrab $peruorty;
+  gap: $gap $peruorty;
+}
+
+//border control
+@mixin borderBox($border, $radius) {
+  border: $border;
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+}
