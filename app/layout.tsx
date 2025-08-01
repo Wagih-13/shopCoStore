@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar/NavBar";
 import "./globals.css";
 import "./globalStyle.scss";
 import Footer from "./components/footer/Footer";
-import { FlagsContextProvider } from "./context/FlagsContext";
+import FlagsContextProvider from "./context/FlagsContext";
 import CartList from "./components/cartList/CartList";
 const cairo = Cairo({
   subsets: ["arabic"], // Specify the necessary subsets
